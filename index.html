@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object getter setter - exercise</title>
+</head>
+<body>
+    
+    <script>
+        const truck = {
+            _brand: null,
+            _model: null,
+            _topSpeed: 0,
+
+            set brand(newBrand) {
+                this._brand = newBrand;
+            },
+            set model(newModel) {
+                this._model = newModel;
+            },
+            set topSpeed(newTopSpeed) {
+                if (newTopSpeed > 0) {
+                    this._topSpeed = newTopSpeed;
+                } else {
+                    console.log("Speed too low");
+                }
+            },
+
+            get brand() {
+                return this._brand;
+            },
+            get model() {
+                return this._model;
+            },
+            get topSpeed() {
+                return this._topSpeed;
+            },
+        }
+
+        console.log(truck.brand, truck.model, truck.topSpeed);
+        truck.brand = "GM";
+        truck.model = "T-500";
+        truck.topSpeed = 200;
+        console.log(truck.brand, truck.model, truck.topSpeed);
+
+    </script>
+</body>
+</html>
